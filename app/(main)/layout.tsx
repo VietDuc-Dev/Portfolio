@@ -1,3 +1,4 @@
+import HeaderMain from "@/components/features/HeaderMain";
 import MainLayout from "@/components/layouts/MainLayout/MainLayout";
 
 interface Props {
@@ -7,7 +8,12 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <>
-      <MainLayout>{children}</MainLayout>
+      <MainLayout>
+        <div className="space-y-6">
+          <HeaderMain />
+          <div>{children}</div>
+        </div>
+      </MainLayout>
     </>
   );
 }

@@ -1,5 +1,6 @@
+import Container from "@/components/common/Container";
 import React from "react";
 
 export default function About() {
-  return <div>About</div>;
+  return <Container>About </Container>;
 }
