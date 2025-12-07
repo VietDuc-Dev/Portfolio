@@ -17,6 +17,7 @@ export default async function SignIn() {
         <CardTitle className="text-2xl font-semibold tracking-wider text-white">
           Login
         </CardTitle>
+        <p className="text-primary">Welcome back! Please sign to continue</p>
       </CardHeader>
 
       {/* Form Content */}

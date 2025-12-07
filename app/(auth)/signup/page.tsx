@@ -18,6 +18,9 @@ export default function SignUp() {
         <CardTitle className="text-2xl font-semibold tracking-wider text-white">
           Register
         </CardTitle>
+        <p className="text-primary">
+          Welcome! Please fill in the details to get started
+        </p>
       </CardHeader>
 
       {/* Form Content */}

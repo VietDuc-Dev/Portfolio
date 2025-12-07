@@ -5,14 +5,20 @@ import { Form, FormField, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { formSigninSchema } from "@/lib/Schema/AuthSchema";
+import { handleClerkError } from "@/utils/clerk-error-handler";
+import { useSignIn } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { Eye, EyeOff, Loader, Lock, Mail } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 
 function SignInForm() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const { isLoaded, signIn, setActive } = useSignIn();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSigninSchema>>({
     resolver: zodResolver(formSigninSchema),
@@ -21,9 +27,32 @@ function SignInForm() {
       password: "",
     },
   });
+  if (!isLoaded) return null;
 
-  const onSubmit = (values: z.infer<typeof formSigninSchema>) => {
-    console.log(values);
+  const onSubmit = async (values: z.infer<typeof formSigninSchema>) => {
+    if (!isLoaded) return;
+
+    setIsLoading(true);
+
+    try {
+      const result = await signIn.create({
+        identifier: values.email,
+        password: values.password,
+      });
+
+      if (result.status === "complete") {
+        await setActive({ session: result.createdSessionId });
+
+        setIsLoading(false);
+        router.push("/");
+      } else {
+        console.error(JSON.stringify(result, null, 2));
+        setIsLoading(false);
+      }
+    } catch (err: unknown) {
+      handleClerkError(err);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -43,6 +72,7 @@ function SignInForm() {
                   <Mail size={16} className="opacity-70" />
                 </span>
                 <Input
+                  data-testid="email-input"
                   id="email"
                   type="email"
                   placeholder="Enter your email"
@@ -69,6 +99,7 @@ function SignInForm() {
                   <Lock size={16} className="opacity-70" />
                 </span>
                 <Input
+                  data-testid="password-input"
                   id="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
@@ -105,7 +136,12 @@ function SignInForm() {
         </div>
 
         {/* Login Button */}
-        <Button type="submit" className="w-full font-bold">
+        <Button
+          data-testid="login-btn"
+          type="submit"
+          className="w-full font-bold"
+        >
+          {isLoading && <Loader className="animate-spin" />}
           Login
         </Button>
       </form>
