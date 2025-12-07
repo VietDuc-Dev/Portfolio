@@ -3,7 +3,5 @@ export default {
   BRAND_NAME: process.env.BRAND_NAME || "",
   DOMAIN: process.env.DOMAIN || "http://localhost:5173",
 
-  POSTGRE_DB: {
-    POSTGRE_URL: process.env.POSTGRE_URL,
-  },
+  DATABASE_URL: process.env.DATABASE_URL,
 };
