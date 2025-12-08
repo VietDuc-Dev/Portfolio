@@ -9,10 +9,10 @@ export default function RootLayout({ children }: Props) {
   return (
     <>
       <MainLayout>
-        <div className="space-y-6">
+        <section>
           <HeaderMain />
-          <div>{children}</div>
-        </div>
+          <div className="mt-6">{children}</div>
+        </section>
       </MainLayout>
     </>
   );
