@@ -9,7 +9,7 @@ interface Props {
 
 export default function DashboardLayout({ children }: Props) {
   return (
-    <div className="min-h-screen xl:flex">
+    <div className="min-h-screen xl:flex bg-gray-800">
       <div>
         <DashboardSidebar />
       </div>

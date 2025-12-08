@@ -1,7 +1,9 @@
 "use client";
 
 import Container from "@/components/common/Container";
+import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
+import { toast } from "sonner";
 
 export default function Home() {
   const { user } = useUser();
@@ -12,6 +14,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-8 text-center">
         Welcome, {user?.emailAddresses[0].emailAddress}!
       </h1>
+      <Button onClick={() => toast.success("hello")}>click me</Button>
     </Container>
   );
 }
