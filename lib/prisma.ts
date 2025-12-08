@@ -1,18 +1,14 @@
-import config from "@/config";
-import { PrismaClient } from "./db/generated/prisma";
+import "dotenv/config";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "../generated/prisma/client";
+import { APP_CONFIG } from "@/config";
 
-const prismaClientSingleton = () => {
-  return new PrismaClient();
-};
+const adapter = new PrismaPg({
+  connectionString: APP_CONFIG.DATABASE_URL,
+});
 
-type PrismaClientSingleton = ReturnType<typeof prismaClientSingleton>;
+const prisma = new PrismaClient({
+  adapter,
+});
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClientSingleton | undefined;
-};
-
-const prisma = globalForPrisma.prisma ?? prismaClientSingleton();
-
-export default prisma;
-
-if (config.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+export { prisma };

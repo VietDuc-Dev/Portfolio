@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import { useSignUp } from "@clerk/nextjs";
 import { ROUTES } from "@/constants/routes";
 import { Loader } from "lucide-react";
-import { handleClerkError } from "@/utils/clerk-error-handler";
+import { handleClerkError } from "@/lib/utils/clerk-error-handler";
 import { useState } from "react";
 
 export default function VerifyCodeForm() {

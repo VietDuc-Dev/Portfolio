@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormField, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { formSignupSchema } from "@/lib/Schema/AuthSchema";
+import { formSignupSchema } from "@/lib/validation/auth.schema";
 import { useSignUp } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff, Loader, Lock, Mail } from "lucide-react";
@@ -12,7 +12,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import VerifyCodeForm from "./VerifyCodeForm";
-import { handleClerkError } from "@/utils/clerk-error-handler";
+import { handleClerkError } from "@/lib/utils/clerk-error-handler";
 
 export default function SignUpForm() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
