@@ -13,6 +13,9 @@ export const ROUTES = {
   signIn: "/signin",
   signUp: "/signup",
   user: "/user",
+  about: "/about",
+  skill: "/skill",
+  project: "/project",
 };
 
 export const CALLBACK_URL = "callbackUrl";

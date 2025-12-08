@@ -1,16 +1,15 @@
-"use client";
-
 import Navigation from "../common/Navigation";
 import SearchBar from "../common/SearchBar";
 import AvatarUser from "../common/AvatarUser";
-import { useUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { Bell } from "lucide-react";
 
-export default function HeaderMain() {
-  const { user } = useUser();
+export default async function HeaderMain() {
+  const user = await currentUser();
+
   return (
     <div className="w-full flex justify-between items-center">
       <SearchBar />
