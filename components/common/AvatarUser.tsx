@@ -21,7 +21,7 @@ export default function AvatarUser() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="flex items-center gap-3 glass-strong pl-1.5 pr-2 py-1 rounded-full hover:cursor-pointer">
+        <div className="flex items-center gap-3 glass pl-1.5 pr-2 py-1 rounded-full hover:cursor-pointer">
           <Avatar>
             <AvatarImage src={user?.imageUrl} />
             <AvatarFallback>A</AvatarFallback>

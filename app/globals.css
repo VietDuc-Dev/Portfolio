@@ -45,42 +45,28 @@
   --background: transparent;
   --foreground: oklch(0.98 0 0);
 
-  /* Glass card */
-  --card: oklch(1 0 0 / 25%);
-  --card-foreground: oklch(0.15 0 0);
+  /* Light Glass */
+  --card: oklch(1 0 0 / 22%);
+  --card-foreground: oklch(0.18 0 0);
 
-  /* Glass popover */
-  --popover: oklch(1 0 0 / 30%);
-  --popover-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0 / 25%);
+  --popover-foreground: oklch(0.12 0 0);
 
-  /* Brand color */
-  --primary: oklch(1 0 0 / 50%);
+  --primary: oklch(1 0 0 / 40%);
   --primary-foreground: white;
 
-  --secondary: oklch(0.15 0 0 / 40%);
-  --secondary-foreground: oklch(0% 0 0);
+  --secondary: oklch(0.3 0 0 / 40%);
+  --secondary-foreground: white;
 
-  --muted: oklch(1 0 0 / 35%);
-  --muted-foreground: oklch(0.4 0 0);
+  --muted: oklch(1 0 0 / 32%);
+  --muted-foreground: oklch(1 0 0/ 50%);
 
-  --accent: oklch(1 0 0 / 50%);
-  --accent-foreground: oklch(0.15 0 0);
+  --accent: oklch(1 0 0 / 40%);
+  --accent-foreground: oklch(0.2 0 0);
 
-  --destructive: oklch(0.62 0.25 27);
-
-  /* Frosted border */
-  --border: oklch(1 0 0 / 50%);
-  --input: oklch(1 0 0 / 40%);
-  --ring: oklch(1 0 0 / 50%);
-
-  /* Sidebar glass */
-  --sidebar: oklch(1 0 0 / 30%);
-  --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-border: oklch(1 0 0 / 40%);
-  --sidebar-primary: oklch(1 0 0 / 50%);
-  --sidebar-primary-foreground: white;
-  --sidebar-accent: oklch(1 0 0 / 45%);
-  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --border: oklch(1 0 0 / 35%);
+  --input: oklch(1 0 0 / 35%);
+  --ring: oklch(1 0 0 / 45%);
 }
 
 /* ===== GLASS MODE (Dark) ===== */
@@ -88,35 +74,27 @@
   --background: transparent;
   --foreground: oklch(0.98 0 0);
 
-  --card: oklch(0 0 0 / 40%);
+  --card: oklch(0 0 0 / 45%);
   --card-foreground: oklch(0.98 0 0);
 
-  --popover: oklch(0 0 0 / 45%);
+  --popover: oklch(0 0 0 / 50%);
   --popover-foreground: oklch(0.98 0 0);
 
-  --primary: oklch(0.8 0.25 260);
-  --primary-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.78 0.27 260);
+  --primary-foreground: black;
 
-  --secondary: oklch(0 0 0 / 50%);
+  --secondary: oklch(0 0 0 / 55%);
   --secondary-foreground: oklch(0.98 0 0);
 
-  --muted: oklch(0 0 0 / 40%);
+  --muted: oklch(0 0 0 / 45%);
   --muted-foreground: oklch(0.7 0 0);
 
-  --accent: oklch(0 0 0 / 55%);
-  --accent-foreground: oklch(0.98 0 0);
+  --accent: oklch(0 0 0 / 60%);
+  --accent-foreground: oklch(1 0 0);
 
   --border: oklch(1 0 0 / 20%);
   --input: oklch(1 0 0 / 20%);
-  --ring: oklch(0.8 0.25 260 / 60%);
-
-  --sidebar: oklch(0 0 0 / 40%);
-  --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-border: oklch(1 0 0 / 18%);
-  --sidebar-primary: oklch(0.75 0.26 260);
-  --sidebar-primary-foreground: black;
-  --sidebar-accent: oklch(1 0 0 / 10%);
-  --sidebar-accent-foreground: oklch(1 0 0);
+  --ring: oklch(0.82 0.25 260 / 60%);
 }
 
 /* ===== BASE STYLE ===== */
@@ -127,23 +105,31 @@
 
   body {
     @apply bg-transparent text-foreground;
-    /* backdrop-filter: blur(0); */
   }
 
   .hoverEffect {
     @apply transition-all duration-300 ease-in-out;
   }
 
-  /* Glass effect helpers */
   .glass {
-    @apply bg-card backdrop-blur-xl border border-border shadow-xl;
+    @apply relative rounded-xl bg-card backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(0,0,0,0.4)] overflow-hidden;
   }
 
-  .glass-strong {
-    @apply bg-card/60 backdrop-blur-2xl border border-border shadow-2xl;
+  .glass::before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none rounded-xl;
+    background: linear-gradient(
+      145deg,
+      rgba(0, 110, 255, 0.1),
+      rgba(0, 210, 255, 0.12),
+      rgba(255, 0, 150, 0.1)
+    );
   }
 
-  .glass-hover {
-    @apply transition hover:bg-white/40 dark:hover:bg-black/40;
+  .glass::after {
+    content: "";
+    @apply absolute inset-0 rounded-xl pointer-events-none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    mask-composite: exclude;
   }
 }

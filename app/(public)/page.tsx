@@ -10,7 +10,7 @@ export default function HomePage() {
   const { user } = useUser();
 
   return (
-    <Container className="w-full flex justify-center min-h-[74vh]">
+    <div className="w-full flex justify-center min-h-[74vh]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -39,9 +39,7 @@ export default function HomePage() {
             <li>• Strong UI/UX mindset</li>
             <li>• Passionate about animations & micro‑interactions</li>
           </ul>
-          <Button className="px-6 py-2 rounded-xl bg-secondary-foreground text-white hover:bg-secondary-foreground/80">
-            View Resume
-          </Button>
+          <Button className="px-6 py-2 rounded-xl">View Resume</Button>
         </motion.div>
 
         <motion.div
@@ -69,6 +67,6 @@ export default function HomePage() {
           </div>
         </motion.div>
       </div>
-    </Container>
+    </div>
   );
 }

@@ -11,7 +11,7 @@ const Container = ({
   return (
     <div
       className={cn(
-        "w-fit p-4 glass rounded-xl shadow-2xl border border-white/20 text-white",
+        "w-fit p-4 glass rounded-xl shadow-2xl text-white",
         className
       )}
     >
