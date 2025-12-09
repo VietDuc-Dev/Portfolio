@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
 import { motion } from "motion/react";
 
-export default function Home() {
+export default function HomePage() {
   const { user } = useUser();
 
   return (
@@ -18,7 +18,8 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="md:col-span-2 space-y-6"
         >
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-5xl font-bold">Hi, I&apos;m Le Viet Duc</h1>
+          <h2 className="text-2xl font-semibold text-secondary-foreground/70">
             <TypingText
               words={[
                 "Web Developer",
@@ -27,9 +28,6 @@ export default function Home() {
                 "React/Next.js Developer",
               ]}
             />
-          </h1>
-          <h2 className="text-2xl font-semibold text-secondary-foreground/70">
-            Web Developer
           </h2>
           <p className="text-secondary-foreground/80 leading-relaxed max-w-lg">
             I am a web developer with over three years of experience in building
@@ -59,7 +57,7 @@ export default function Home() {
               className="w-full h-full object-cover"
             />
           </div>
-          <p className="text-2xl font-semibold mt-4">Samantha Arora</p>
+          <p className="text-2xl font-semibold mt-4">Lê Việt Đức</p>
           <p className="text-secondary-foreground/60 mt-1">Frontend Engineer</p>
           <div className="flex gap-4 mt-4">
             <Button variant="outline" className="rounded-full px-4">

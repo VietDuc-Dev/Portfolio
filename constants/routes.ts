@@ -1,11 +1,10 @@
-import { GITHUB_LINK } from "./socialLinks";
-
 export const navigationLink = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
-  { title: "Skills", href: "/skill" },
-  { title: "Projects", href: "/project" },
-  { title: "Github", href: GITHUB_LINK },
+  { title: "Skills", href: "/skills" },
+  { title: "Projects", href: "/projects" },
+  { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/contact" },
 ];
 
 export const ROUTES = {

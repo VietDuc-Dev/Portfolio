@@ -1,11 +1,10 @@
 import Container from "@/components/common/Container";
 import React from "react";
 
-export default function AboutPage() {
+export default function ProjectPage() {
   return (
     <Container>
-      <h1>About</h1>
-      <h3>About me + Education</h3>
+      <h1>Project</h1>
     </Container>
   );
 }
