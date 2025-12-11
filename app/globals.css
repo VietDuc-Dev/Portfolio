@@ -132,4 +132,26 @@
     border: 1px solid rgba(255, 255, 255, 0.35);
     mask-composite: exclude;
   }
+
+  .glassBase {
+    @apply relative rounded-sm bg-card backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(0,0,0,0.4)] overflow-hidden;
+  }
+
+  .glassBase::before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none rounded-sm;
+    background: linear-gradient(
+      145deg,
+      rgba(0, 110, 255, 0.1),
+      rgba(0, 210, 255, 0.12),
+      rgba(255, 0, 150, 0.1)
+    );
+  }
+
+  .glassBase::after {
+    content: "";
+    @apply absolute inset-0 rounded-sm pointer-events-none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    mask-composite: exclude;
+  }
 }

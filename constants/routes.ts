@@ -1,7 +1,7 @@
 export const navigationLink = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
-  { title: "Skills", href: "/skills" },
+  { title: "Experiences", href: "/experiences" },
   { title: "Projects", href: "/projects" },
   { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },

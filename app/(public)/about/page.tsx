@@ -83,15 +83,16 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Right – Info Section */}
+
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center"
           >
-            <div className="space-y-4">
+            <div className="space-y-4 py-8">
               {/* Contact Info */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-y-6">
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -129,7 +130,7 @@ export default function AboutPage() {
                   className="flex items-start gap-3"
                 >
                   <MapPin className="w-5 h-5" />
-                  <p className="font-medium">Location: Thu Duc City, HCMC</p>
+                  <p className="font-medium">Location: Thu Duc, HCM City</p>
                 </motion.div>
               </div>
 
@@ -142,7 +143,7 @@ export default function AboutPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.45 }}
                 >
-                  <h3 className="text-5xl font-bold bg-linear-to-r from-purple-500 to-orange-400 bg-clip-text text-transparent">
+                  <h3 className="text-4xl font-bold bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
                     EDUCATION
                   </h3>
 
@@ -170,7 +171,7 @@ export default function AboutPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                  <h3 className="text-5xl font-bold bg-linear-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
+                  <h3 className="text-4xl font-bold bg-linear-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
                     1.5+
                   </h3>
                   <p className="font-semibold mt-1">Years of Experience</p>

@@ -2,12 +2,9 @@
 
 import TypingText from "@/components/common/TypingText";
 import { Button } from "@/components/ui/button";
-import { useUser } from "@clerk/nextjs";
 import { motion } from "motion/react";
 
 export default function HomePage() {
-  const { user } = useUser();
-
   return (
     <div className="w-full flex justify-center min-h-[74vh]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-20 items-center">
