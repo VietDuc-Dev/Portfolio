@@ -11,18 +11,18 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function ContactCard() {
   return (
-    <div className="w-full glass transform hover:scale-[1.02] transition-transform duration-500 ease-in-out relative overflow-hidden grid grid-cols-3 py-4">
+    <div className="w-full transform hover:scale-[1.02] transition-transform duration-500 ease-in-out relative overflow-hidden grid grid-cols-3 py-4">
       {/* Avatar */}
       <div>
         <div>
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
           <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
 
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 via-transparent to-blue-400/10 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-linear-to-br from-purple-400/20 via-transparent to-blue-400/20 rounded-3xl border rounded-bl-none rounded-tr-none"></div>
 
-          <div className="flex justify-center -mt-20 mb-6 relative z-10 mt-5">
+          <div className="flex justify-center mb-6 relative z-10 mt-5">
             <div className="relative group">
-              <div className="absolute inset-0  bg-gradient-to-br from-purple-400 to-pink-500 rounded-full blur-md group-hover:blur-lg transition-all duration-500"></div>
+              <div className="absolute inset-0  bg-linear-to-br from-purple-400 to-pink-500 rounded-full blur-md group-hover:blur-lg transition-all duration-500"></div>
               <div className="w-30 h-30 object-cover rounded-full border-4 border-white/80 shadow-xl hover:scale-105 transform transition-all duration-400 relative z-10 overflow-hidden">
                 <Image
                   src="/Avatar.jpg"

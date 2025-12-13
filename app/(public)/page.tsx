@@ -15,13 +15,13 @@ export default function HomePage() {
           transition={{ duration: 0.6 }}
           className="md:col-span-2 space-y-6"
         >
-          <h1 className="text-5xl font-bold ">Hi, I&apos;m Le Viet Duc</h1>
+          <h1 className="text-5xl font-bold">Hi, I&apos;m Le Viet Duc</h1>
           <h2 className="text-2xl font-semibold text-secondary-foreground/70">
             <TypingText
               words={[
                 "Web Developer",
                 "Frontend Engineer",
-                "UI/UX Enthusiast",
+                "Backend Engineer",
                 "React/Next.js Developer",
               ]}
             />

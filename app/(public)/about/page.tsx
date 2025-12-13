@@ -96,77 +96,81 @@ export default function AboutPage() {
           >
             <div className="space-y-4 py-8">
               {/* Contact Info */}
-              <div className="grid grid-cols-2 gap-y-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25 }}
-                  className="flex items-start gap-3"
-                >
-                  <Phone className="w-5 h-5" />
-                  <p className="font-medium">Phone: +84 386 631 531</p>
-                </motion.div>
+              <div className="rounded-2xl border p-4 shadow-sm h-full">
+                <div className="grid grid-cols-2 gap-y-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.25 }}
+                    className="flex items-start gap-3"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <p className="font-medium">Phone: +84 386 631 531</p>
+                  </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="flex items-start gap-3"
-                >
-                  <Cake className="w-5 h-5" />
-                  <p className="font-medium">Date of birth: 23/07/2002</p>
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="flex items-start gap-3"
+                  >
+                    <Cake className="w-5 h-5" />
+                    <p className="font-medium">Date of birth: 23/07/2002</p>
+                  </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.35 }}
-                  className="flex items-start gap-3"
-                >
-                  <Mail className="w-5 h-5" />
-                  <p className="font-medium">Email: levietduc.dev@gmail.com</p>
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35 }}
+                    className="flex items-start gap-3"
+                  >
+                    <Mail className="w-5 h-5" />
+                    <p className="font-medium">
+                      Email: levietduc.dev@gmail.com
+                    </p>
+                  </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="flex items-start gap-3"
-                >
-                  <MapPin className="w-5 h-5" />
-                  <p className="font-medium">Location: Thu Duc, HCM City</p>
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="flex items-start gap-3"
+                  >
+                    <MapPin className="w-5 h-5" />
+                    <p className="font-medium">Location: Thu Duc, HCM City</p>
+                  </motion.div>
+                </div>
               </div>
 
               <div className="border-t border-gray-300 my-4" />
 
-              <div className="grid grid-cols-2 gap-10">
+              <div className="grid grid-cols-2 gap-4">
                 {/* Education */}
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.45 }}
                 >
-                  <h3 className="text-4xl font-bold bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-                    EDUCATION
-                  </h3>
+                  <div className="rounded-2xl border p-4 shadow-sm h-full">
+                    <h3 className="text-3xl font-bold">EDUCATION</h3>
 
-                  <p className="font-semibold mt-1">Academic Background</p>
+                    <p className="font-semibold mt-1">Academic Background</p>
 
-                  <p className="mt-3">
-                    Bachelor of{" "}
-                    <span className="font-bold">Information Technology</span>
-                    <br />
-                    <span className="text-blue-600 font-semibold">
-                      UTC2 – HCMC | Graduated 2024
-                    </span>
-                    <br />
-                    Focused on{" "}
-                    <span className="font-semibold">
-                      ReactJS, Next.js, TS
-                    </span>{" "}
-                    and modern web development.
-                  </p>
+                    <p className="mt-3">
+                      Bachelor of{" "}
+                      <span className="font-bold">Information Technology</span>
+                      <br />
+                      <span className="underline underline-offset-4 font-semibold">
+                        UTC2 – HCMC | Graduated 2024
+                      </span>
+                      <br />
+                      Focused on{" "}
+                      <span className="font-semibold">
+                        ReactJS, Next.js, TS
+                      </span>{" "}
+                      and modern web development.
+                    </p>
+                  </div>
                 </motion.div>
 
                 {/* Experience */}
@@ -175,17 +179,17 @@ export default function AboutPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                  <h3 className="text-4xl font-bold bg-linear-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent">
-                    1.5+
-                  </h3>
-                  <p className="font-semibold mt-1">Years of Experience</p>
-                  <p className="mt-3">
-                    Specialized in{" "}
-                    <span className="font-bold text-blue-600">
-                      ReactJS / Next.js / TypeScript
-                    </span>{" "}
-                    with clean UI, smooth UX & scalable architecture.
-                  </p>
+                  <div className="rounded-2xl border p-4 shadow-sm h-full">
+                    <h3 className="text-3xl font-bold">1.5+</h3>
+                    <p className="font-semibold mt-1">Years of Experience</p>
+                    <p className="mt-3">
+                      Specialized in{" "}
+                      <span className="font-bold underline underline-offset-4">
+                        ReactJS / Next.js / TypeScript
+                      </span>{" "}
+                      with clean UI, smooth UX & scalable architecture.
+                    </p>
+                  </div>
                 </motion.div>
               </div>
 
