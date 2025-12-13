@@ -10,11 +10,11 @@ export default function ContactPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full flex items-center justify-center"
+      className="w-full h-[70vh] flex items-center justify-center"
     >
-      <div className="max-w-7xl w-80% grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="max-w-7xl w-80% grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* LEFT */}
-        <div className="text-white">
+        <div className="text-white space-y-10">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -35,9 +35,8 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex items-center gap-4 p-4"
           >
-            <ContactForm />
+            <ContactCard />
           </motion.div>
         </div>
 
@@ -46,8 +45,9 @@ export default function ContactPage() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          className="flex justify-center items-center"
         >
-          <ContactCard />
+          <ContactForm />
         </motion.div>
       </div>
     </motion.div>
