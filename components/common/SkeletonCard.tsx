@@ -9,9 +9,9 @@ export default function SkeletonCard() {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.4 }}
       className="
-        w-full h-[280px] rounded-xl 
-        bg-white/5 border border-white/10 
-        animate-pulse 
+        w-full h-[280px] rounded-xl
+        bg-white/5 border border-white/10
+        animate-pulse
         backdrop-blur-md
       "
     >
