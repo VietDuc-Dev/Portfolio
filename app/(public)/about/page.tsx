@@ -4,6 +4,7 @@ import Container from "@/components/common/Container";
 import { Button } from "@/components/ui/button";
 import { Cake, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -36,12 +37,15 @@ export default function AboutPage() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="w-60 h-60 rounded-full overflow-hidden shadow-md"
+                  className="w-60 h-60 rounded-full overflow-hidden shadow-md relative"
                 >
-                  <img
-                    src="/avatar.jpg"
-                    alt="Profile"
-                    className="w-full h-full object-cover"
+                  <Image
+                    src="/Avatar.jpg"
+                    alt="Avatar"
+                    fill
+                    sizes="240px"
+                    className="object-cover"
+                    priority
                   />
                 </motion.div>
 

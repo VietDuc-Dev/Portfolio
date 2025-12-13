@@ -10,7 +10,13 @@ export default function TechItem({ name, icon }: Props) {
     <div
       className={`glassBase px-2 py-2 flex items-center gap-2 ${styles.wrapper}`}
     >
-      <img src={icon} width="40" height="40" className={styles.icon} />
+      <img
+        src={icon}
+        alt={name}
+        width="40"
+        height="40"
+        className={styles.icon}
+      />
 
       <span className={`${styles.text} text-lg font-medium pr-2`}>{name}</span>
     </div>
