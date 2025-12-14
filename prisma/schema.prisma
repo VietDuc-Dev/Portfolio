@@ -47,6 +47,7 @@ model Project {
   liveUrl     String?
   githubUrl   String?
   coverImage  String?
+  featured    String?
 
   createdAt   DateTime        @default(now())
   updatedAt   DateTime        @updatedAt
@@ -54,6 +55,16 @@ model Project {
   user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
   images      ProjectImage[]
   skills      ProjectSkill[]
+  features    ProjectFeature[]
+}
+
+model ProjectFeature {
+  id        Int      @id @default(autoincrement())
+  projectId Int
+  emoji     String
+  message   String      
+
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
 
 model ProjectImage {

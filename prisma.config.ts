@@ -12,3 +12,6 @@ export default defineConfig({
     url: env("DATABASE_URL"),
   },
 });
+
+// npx prisma studio
+// npm run seed

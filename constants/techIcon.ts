@@ -4,8 +4,8 @@ export const techIconFrontend = [
   { name: "JavaScript", icon: "javascript.svg" },
   { name: "TypeScript", icon: "Typescript.svg" },
   { name: "React", icon: "react.svg" },
-  { name: "NextJS", icon: "next.js.svg" },
-  { name: "TailwindCSS", icon: "tailwind css.svg" },
+  { name: "Next.JS", icon: "next.js.svg" },
+  { name: "Tailwind CSS", icon: "tailwind css.svg" },
   { name: "Shadcn UI", icon: "shadcn.png" },
   { name: "Material UI", icon: "material ui.svg" },
   { name: "Motion", icon: "motion.png" },
@@ -13,7 +13,7 @@ export const techIconFrontend = [
 ];
 
 export const techIconBackend = [
-  { name: "Node", icon: "node.js.svg" },
+  { name: "Node.JS", icon: "node.js.svg" },
   { name: "Express", icon: "express.svg" },
   { name: "TypeScript", icon: "Typescript.svg" },
   { name: "PostgresSQL", icon: "PostgresSQL.svg" },
@@ -30,11 +30,4 @@ export const techIconTool = [
   { name: "Socket.io", icon: "Socket.io.svg" },
 ];
 
-export const languageIcon = [
-  { name: "React", icon: "/" },
-  { name: "Next.js", icon: "/about" },
-  { name: "TypeScript", icon: "/experiences" },
-  { name: "TailwindCSS", icon: "/projects" },
-  { name: "Shadcn/UI", icon: "/blog" },
-  { name: "Motion", icon: "/contact" },
-];
+export const languageIcon = [];
