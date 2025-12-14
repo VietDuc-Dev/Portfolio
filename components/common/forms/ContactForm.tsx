@@ -37,7 +37,7 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="w-full px-4 glass rounded-xl shadow-2xl border border-white/20 text-white">
+    <Card className="max-w-2/3 px-4 glass rounded-xl shadow-2xl border border-white/20 text-white">
       {/* Header */}
       <CardHeader className="text-center">
         <CardTitle className="text-3xl font-semibold tracking-wider text-white">

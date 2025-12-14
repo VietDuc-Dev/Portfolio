@@ -42,6 +42,10 @@ export default function ProjectDetailPage() {
           </h1>
 
           <p className="text-sm mb-8">
+            <span className="font-normal">{project.description}</span>
+          </p>
+
+          <p className="text-sm mb-8">
             Featured: <span className="font-medium">{project.featured}</span>
           </p>
 
@@ -52,7 +56,7 @@ export default function ProjectDetailPage() {
               {project.skills.map((tech) => (
                 <span
                   key={tech.skillId}
-                  className="px-3 py-1 text-xs font-medium rounded-full glass"
+                  className="px-4 py-1.5 text-xs font-medium rounded-full glass"
                 >
                   {tech.skill.name}
                 </span>
@@ -63,7 +67,7 @@ export default function ProjectDetailPage() {
           {/* Features */}
           <div className="mb-10">
             <h3 className="font-semibold mb-3">Project Features</h3>
-            <ul className="space-y-2 text-sm list-disc pl-5">
+            <ul className="space-y-2 list-disc pl-5">
               {project.features.map((item) => (
                 <li key={item.id}>
                   {item.emoji} {item.message}

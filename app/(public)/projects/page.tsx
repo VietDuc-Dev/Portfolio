@@ -5,33 +5,18 @@ import { motion } from "framer-motion";
 
 import CardProject from "@/components/common/CardProject";
 import { DropdownMenuCheckboxes } from "@/components/features/FilterProject";
-import SkeletonCard from "@/components/common/SkeletonCard";
 import { MotionCard } from "@/components/common/MotionCard";
 import { Project } from "@/types/project";
-import { DB_Project } from "@/constants/data";
+import ProjectAPI from "@/lib/server/ProjectAPI";
 
 export default function ProjectPage() {
-  const [isLoading, setIsLoading] = useState(true);
   const [projects, setProjects] = useState<Project[]>([]);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProjects = async (): Promise<void> => {
-      try {
-        setIsLoading(true);
-
-        await new Promise((resolve) => setTimeout(resolve, 800));
-
-        setProjects(DB_Project);
-      } catch (error: unknown) {
-        setError(error instanceof Error ? error.message : "Unknown error");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchProjects();
+    ProjectAPI.getAllProjects().then(setProjects);
   }, []);
+
+  if (!projects) return null;
 
   return (
     <motion.div
@@ -66,13 +51,11 @@ export default function ProjectPage() {
 
       {/* Grid (loading vs real data) */}
       <div className="grid grid-cols-3 gap-4">
-        {isLoading
-          ? Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)
-          : projects.map((project) => (
-              <MotionCard key={project.slug}>
-                <CardProject project={project} />
-              </MotionCard>
-            ))}
+        {projects.map((project) => (
+          <MotionCard key={project.slug}>
+            <CardProject project={project} />
+          </MotionCard>
+        ))}
       </div>
     </motion.div>
   );

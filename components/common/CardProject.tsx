@@ -13,8 +13,8 @@ export default function CardProject({ project }: { project: Project }) {
       <Link href={`projects/${project.slug}`}>
         <div className="w-full max-h-52 overflow-hidden">
           <Image
-            src="/image-1.jpg"
-            alt="Avatar"
+            src={project.coverImage}
+            alt={project.title}
             width={500}
             height={500}
             className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]"

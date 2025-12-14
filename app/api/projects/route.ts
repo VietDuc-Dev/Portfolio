@@ -3,23 +3,25 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET(req: NextResponse) {
   try {
-    const projects = await prisma.project.findUnique({
-      where: { slug: "teams-project-management-app" },
-      include: {
-        images: true,
-        skills: {
-          include: { skill: true },
-        },
-        features: true,
-      },
-    });
+    const projects = await prisma.project.findMany();
+
+    if (!projects) {
+      return NextResponse.json(
+        { success: false, message: "Project not found" },
+        { status: 404 }
+      );
+    }
 
     return NextResponse.json(
-      { success: true, message: "successfully", projects },
+      { success: true, message: "Fetch all project success", projects },
       { status: 200 }
     );
   } catch (error) {
-    console.log(error);
-    return NextResponse.json({ message: "" }, { status: 500 });
+    console.error("Error fetching project:", error);
+
+    return NextResponse.json(
+      { success: false, message: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
