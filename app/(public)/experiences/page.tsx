@@ -26,7 +26,7 @@ export default function ExperiencesPage() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <motion.h1
-            className="text-3xl font-bold tracking-tight mb-4 bg-linear-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent"
+            className="text-3xl font-bold tracking-tight mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -134,7 +134,7 @@ export default function ExperiencesPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <h1 className="text-3xl font-bold tracking-tight mb-6 bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold tracking-tight mb-6">
             Work & Education Timeline
           </h1>
 

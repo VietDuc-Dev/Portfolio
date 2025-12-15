@@ -85,7 +85,9 @@ export default function AboutPage() {
                   className="space-x-2"
                 >
                   <Link href={"/resume"}>
-                    <Button className="mt-6">View Resume</Button>
+                    <Button className="mt-6 bg-gray-600 hover:bg-gray-700">
+                      View Resume
+                    </Button>
                   </Link>
                   <Button variant="outline" className="mt-6">
                     <PDFDownloadLink
@@ -107,7 +109,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center"
           >
-            <div className="space-y-4 py-8">
+            <div className="space-y-4">
               {/* Contact Info */}
               <div className="rounded-2xl border p-4 shadow-sm h-full">
                 <div className="grid grid-cols-2 gap-y-6">

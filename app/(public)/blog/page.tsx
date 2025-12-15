@@ -16,10 +16,7 @@ export default function BlogPage() {
           initial={{ opacity: 0, x: -15 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="
-            text-3xl font-bold tracking-tight bg-linear-to-r 
-            from-pink-500 to-blue-500 bg-clip-text text-transparent
-          "
+          className="text-4xl font-bold tracking-tight"
         >
           Blog
         </motion.h1>

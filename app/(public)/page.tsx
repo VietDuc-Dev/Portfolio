@@ -4,6 +4,7 @@ import TypingText from "@/components/common/TypingText";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -37,10 +38,16 @@ export default function HomePage() {
             <li>• Passionate about animations & micro‑interactions</li>
           </ul>
           <div className="space-x-4">
-            <Button className="px-6 py-2 rounded-xl">Hire me</Button>
-            <Button variant="outline" className="rounded-xl px-6 py-2">
-              My project
-            </Button>
+            <Link href={"/contact"}>
+              <Button className="px-6 py-2 rounded-xl bg-gray-600 hover:bg-gray-700">
+                Hire me
+              </Button>
+            </Link>
+            <Link href={"/projects"}>
+              <Button variant="outline" className="rounded-xl px-6 py-2">
+                My project
+              </Button>
+            </Link>
           </div>
         </motion.div>
 
@@ -50,7 +57,7 @@ export default function HomePage() {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center"
         >
-          <div className="w-60 h-60 rounded-full p-[3px] bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 shadow-[0_0_25px_rgba(0,0,0,0.4)] flex justify-center items-center">
+          <div className="w-60 h-60 rounded-full p-[3px] shadow-[0_0_25px_rgba(0,0,0,0.4)] flex justify-center items-center">
             <div className="relative w-58 h-58 rounded-full overflow-hidden">
               <Image
                 src="/Avatar.jpg"

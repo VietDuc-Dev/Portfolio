@@ -5,9 +5,11 @@ import { Home, Heart, Download, User, Settings, FileText } from "lucide-react";
 import { PDFDownloadLink, ResumeDocument } from "@/components/pdf";
 import { resume } from "@/constants/resume";
 import Link from "next/link";
+import { useBackground } from "@/lib/contexts/BackgroundContext";
 
 export default function MainSidebar() {
   const { user } = useUser();
+  const { toggleSetting } = useBackground();
 
   return (
     <div>
@@ -48,9 +50,11 @@ export default function MainSidebar() {
           </Link>
         )}
 
-        <Icon>
-          <Settings size={20} />
-        </Icon>
+        <button onClick={toggleSetting}>
+          <Icon>
+            <Settings size={20} />
+          </Icon>
+        </button>
       </Container>
     </div>
   );

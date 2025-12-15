@@ -22,10 +22,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="space-y-2"
           >
-            <h1
-              className="text-4xl md:text-5xl font-bold leading-tight bg-linear-to-r 
-            from-pink-500 to-blue-500 bg-clip-text text-transparent"
-            >
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               Let&apos;s Work Together
             </h1>
             <p className="text-gray-300 leading-relaxed max-w-md">
