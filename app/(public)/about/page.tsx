@@ -1,10 +1,13 @@
 "use client";
 
 import Container from "@/components/common/Container";
+import { PDFDownloadLink, ResumeDocument } from "@/components/pdf";
 import { Button } from "@/components/ui/button";
 import { Cake, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
+import { resume } from "@/constants/resume";
 
 export default function AboutPage() {
   return (
@@ -79,8 +82,18 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
+                  className="space-x-2"
                 >
-                  <Button className="mt-6">Download CV</Button>
+                  <Link href={"/resume"}>
+                    <Button className="mt-6">View Resume</Button>
+                  </Link>
+                  <Button variant="outline" className="mt-6">
+                    <PDFDownloadLink
+                      document={<ResumeDocument resume={resume} />}
+                    >
+                      Download Resume
+                    </PDFDownloadLink>
+                  </Button>
                 </motion.div>
               </div>
             </div>
