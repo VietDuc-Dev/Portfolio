@@ -1,11 +1,11 @@
 export const timelineData = [
   {
-    time: "2020 - 2024",
+    time: "08/2020 - 06/2024",
     title: "University of Transport and Communications – HCM City",
     desc: ["• Graduated with a Good degree in IT."],
   },
   {
-    time: "12/2023 - 3/2024",
+    time: "12/2023 - 03/2024",
     title: "Ky Nguyen So Software – Intern",
     desc: [
       "• UI/UX design and optimization.",
@@ -14,7 +14,7 @@ export const timelineData = [
     ],
   },
   {
-    time: "4/2024 - 8/2025",
+    time: "04/2024 - 08/2025",
     title: "Viettel – Technical Specialist",
     desc: [
       "• Technical analysis & troubleshooting.",

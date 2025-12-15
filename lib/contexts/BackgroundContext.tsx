@@ -25,7 +25,7 @@ const BackgroundContext = createContext<BackgroundContextType | undefined>(
 const STORAGE_KEY = "portfolio-background";
 
 export function BackgroundProvider({ children }: { children: ReactNode }) {
-  const [background, setBackgroundState] = useState(BACKGROUNDS[0]);
+  const [background, setBackgroundState] = useState(BACKGROUNDS[1]);
   const [isSettingOpen, setIsSettingOpen] = useState(false);
 
   // Load saved background

@@ -91,19 +91,22 @@ async function main() {
   //   },
   // });
   // Project Skill
-  // const skills = await prisma.skill.findMany();
-  // const skillMap = Object.fromEntries(
-  //   skills.map((skill) => [skill.name, skill.id])
-  // );
-  // await prisma.projectSkill.createMany({
-  //   data: [
-  //     { projectId: 4, skillId: skillMap["Next.JS"] },
-  //     { projectId: 4, skillId: skillMap["TypeScript"] },
-  //     { projectId: 4, skillId: skillMap["Tailwind CSS"] },
-  //     { projectId: 4, skillId: skillMap["React"] },
-  //     { projectId: 4, skillId: skillMap["Node.JS"] },
-  //   ],
-  // });
+  const skills = await prisma.skill.findMany();
+  const skillMap = Object.fromEntries(
+    skills.map((skill) => [skill.name, skill.id])
+  );
+  await prisma.projectSkill.createMany({
+    data: [
+      { projectId: 4, skillId: skillMap["React"] },
+      { projectId: 4, skillId: skillMap["TypeScript"] },
+      { projectId: 4, skillId: skillMap["Material UI"] },
+      { projectId: 4, skillId: skillMap["Tailwind CSS"] },
+      { projectId: 4, skillId: skillMap["Node.JS"] },
+      { projectId: 4, skillId: skillMap["Express"] },
+      { projectId: 4, skillId: skillMap["MongoDB"] },
+      { projectId: 4, skillId: skillMap["JSON Web Tokens"] },
+    ],
+  });
   // Project image
   // await prisma.projectImage.createMany({
   //   data: [

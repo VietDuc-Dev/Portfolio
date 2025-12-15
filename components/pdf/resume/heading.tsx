@@ -72,7 +72,10 @@ export const Heading: React.FC<HeadingProps> = ({ info }) => {
             <Link src={`mailto:${info.email}`} style={styles.link}>
               <IconText icon="at" text={info.email} />
             </Link>
-            <IconText icon="location" text={`${info.phone}`} />
+
+            <Link src={`mailto:${info.phone}`} style={styles.link}>
+              <IconText icon="at" text={info.phone} />
+            </Link>
             <IconText
               icon="location"
               text={`${info.location.region}, ${info.location.city}, ${info.location.countryCode}`}

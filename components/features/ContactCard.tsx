@@ -8,6 +8,14 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import {
+  FACEBOOK_LINK,
+  GITHUB_LINK,
+  LINKEDIN_LINK,
+  TIKTOK_LINK,
+  YOUTUBE_LINK,
+} from "@/constants/socialLinks";
 
 export default function ContactCard() {
   return (
@@ -70,21 +78,31 @@ export default function ContactCard() {
         </p>
 
         <div className="flex justify-center space-x-6 z-10">
-          <Icon>
-            <FaGithub size={22} />
-          </Icon>
-          <Icon>
-            <FaLinkedin size={22} />
-          </Icon>
-          <Icon>
-            <FaFacebook size={22} />
-          </Icon>
-          <Icon>
-            <FaYoutube size={22} />
-          </Icon>
-          <Icon>
-            <FaTiktok size={22} />
-          </Icon>
+          <Link href={GITHUB_LINK}>
+            <Icon>
+              <FaGithub size={22} />
+            </Icon>
+          </Link>
+          <Link href={LINKEDIN_LINK}>
+            <Icon>
+              <FaLinkedin size={22} />
+            </Icon>
+          </Link>
+          <Link href={FACEBOOK_LINK}>
+            <Icon>
+              <FaFacebook size={22} />
+            </Icon>
+          </Link>
+          <Link href={YOUTUBE_LINK}>
+            <Icon>
+              <FaYoutube size={22} />
+            </Icon>
+          </Link>
+          <Link href={TIKTOK_LINK}>
+            <Icon>
+              <FaTiktok size={22} />
+            </Icon>
+          </Link>
         </div>
       </div>
     </div>
