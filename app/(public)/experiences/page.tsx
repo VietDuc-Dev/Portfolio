@@ -17,10 +17,10 @@ export default function ExperiencesPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-12 gap-x-12 items-start">
         {/* LEFT SIDE – SKILLS */}
         <motion.div
-          className="space-y-6"
+          className="space-y-6 col-span-6"
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -133,6 +133,7 @@ export default function ExperiencesPage() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
+          className="col-span-6"
         >
           <h1 className="text-3xl font-bold tracking-tight mb-6">
             Work & Education Timeline

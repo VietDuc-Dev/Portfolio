@@ -14,7 +14,9 @@ export default function BaseLayout({ children }: Props) {
       style={{ backgroundImage: `url(${background})` }}
       className="min-h-screen bg-cover bg-center flex items-center justify-center"
     >
-      <div className="flex justify-center items-center w-full">{children}</div>
+      <div className="flex justify-center items-center w-full text-shadow">
+        {children}
+      </div>
     </main>
   );
 }

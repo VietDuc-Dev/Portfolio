@@ -25,7 +25,7 @@ export default function MainLayout({ children }: Props) {
           className="relative bg-cover bg-center bg-no-repeat flex w-full max-w-7xl h-[90vh] rounded-3xl shadow-2xl border border-white/20 overflow-hidden backdrop-blur-sm"
           style={{ backgroundImage: `url(${background})` }}
         >
-          <div className="flex-1 flex flex-col p-6 gap-6 overflow-y-auto scroll-smooth">
+          <div className="flex-1 flex flex-col p-6 gap-6 overflow-y-auto scroll-smooth text-shadow">
             {children}
           </div>
           {isSettingOpen && (

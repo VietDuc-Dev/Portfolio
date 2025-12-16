@@ -107,6 +107,10 @@
     @apply bg-transparent text-foreground;
   }
 
+  .text-shadow {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+
   .hoverEffect {
     @apply transition-all duration-300 ease-in-out;
   }

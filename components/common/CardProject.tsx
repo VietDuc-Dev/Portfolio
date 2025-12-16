@@ -11,7 +11,7 @@ export default function CardProject({ project }: { project: Project }) {
     <div className="group rounded overflow-hidden flex flex-col max-w-xl mx-auto transition-all duration-500 hover:-translate-y-2">
       {/* IMAGE */}
       <Link href={`projects/${project.slug}`}>
-        <div className="w-full max-h-52 overflow-hidden">
+        <div className="w-full max-h-48 overflow-hidden">
           <Image
             src={project.coverImage}
             alt={project.title}
@@ -31,17 +31,19 @@ export default function CardProject({ project }: { project: Project }) {
           </p>
         </Link>
 
-        <Link href={project.githubUrl}>
-          <Button variant="link" className="rounded-sm text-gray-800">
-            <Github /> Github
-          </Button>
-        </Link>
+        <div>
+          <Link href={project.githubUrl}>
+            <Button variant="link" className="rounded-sm text-gray-800">
+              <Github /> Github
+            </Button>
+          </Link>
 
-        <Link href={project.liveUrl}>
-          <Button variant="link" className="rounded-sm text-gray-800">
-            <ArrowUpRight /> Demo
-          </Button>
-        </Link>
+          <Link href={project.liveUrl}>
+            <Button variant="link" className="rounded-sm text-gray-800">
+              <ArrowUpRight /> Demo
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -57,7 +57,7 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.25 }}
-                  className="text-4xl mt-4 font-extrabold bg-linear-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent"
+                  className="text-4xl mt-4 font-extrabold bg-linear-to-r from-pink-500 to-orange-400 bg-clip-text text-transparent text-shadow-none"
                 >
                   LE VIET DUC
                 </motion.h2>

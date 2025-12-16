@@ -12,9 +12,9 @@ export default function ContactPage() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="w-full h-[70vh]"
     >
-      <div className="max-w-7xl w-80% grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="h-full grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* LEFT */}
-        <div className="text-white space-y-10">
+        <div className="text-white col-span-7 space-y-10">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,7 @@ export default function ContactPage() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="md:mt-20 flex justify-center items-center"
+          className="col-span-5 flex justify-end items-center"
         >
           <ContactForm />
         </motion.div>

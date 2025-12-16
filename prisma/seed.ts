@@ -90,29 +90,41 @@ async function main() {
   //     coverImage: "/image-3.jpg",
   //   },
   // });
+  // await prisma.project.create({
+  //   data: {
+  //     userId: "user_36YvoGZ6yiQVujpTR2kBaSLRndz",
+  //     title: "Portfolio VietDuc.Dev",
+  //     slug: "portfolio-vietduc.Dev",
+  //     description:
+  //       "Welcome to VietDuc.dev, a modern and scalable Portfolio VietDuc.Dev platform built with (Node.js, Express, Postgresql, React, typeScript).",
+  //     liveUrl: "https://portfolio-five-puce-64.vercel.app/",
+  //     githubUrl: "https://github.com/VietDuc-Dev/Portfolio",
+  //     coverImage: "/bg-portfolio.png",
+  //   },
+  // });
   // Project Skill
-  const skills = await prisma.skill.findMany();
-  const skillMap = Object.fromEntries(
-    skills.map((skill) => [skill.name, skill.id])
-  );
-  await prisma.projectSkill.createMany({
-    data: [
-      { projectId: 4, skillId: skillMap["React"] },
-      { projectId: 4, skillId: skillMap["TypeScript"] },
-      { projectId: 4, skillId: skillMap["Material UI"] },
-      { projectId: 4, skillId: skillMap["Tailwind CSS"] },
-      { projectId: 4, skillId: skillMap["Node.JS"] },
-      { projectId: 4, skillId: skillMap["Express"] },
-      { projectId: 4, skillId: skillMap["MongoDB"] },
-      { projectId: 4, skillId: skillMap["JSON Web Tokens"] },
-    ],
-  });
+  // const skills = await prisma.skill.findMany();
+  // const skillMap = Object.fromEntries(
+  //   skills.map((skill) => [skill.name, skill.id])
+  // );
+  // await prisma.projectSkill.createMany({
+  //   data: [
+  //     { projectId: 5, skillId: skillMap["Next.JS"] },
+  //     { projectId: 5, skillId: skillMap["TypeScript"] },
+  //     { projectId: 5, skillId: skillMap["Material UI"] },
+  //     { projectId: 5, skillId: skillMap["Tailwind CSS"] },
+  //     { projectId: 5, skillId: skillMap["Node.JS"] },
+  //     { projectId: 5, skillId: skillMap["Express"] },
+  //     { projectId: 5, skillId: skillMap["MongoDB"] },
+  //     { projectId: 5, skillId: skillMap["JSON Web Tokens"] },
+  //   ],
+  // });
   // Project image
   // await prisma.projectImage.createMany({
   //   data: [
   //     {
-  //       projectId: 4,
-  //       imageUrl: "/web.avif",
+  //       projectId: 5,
+  //       imageUrl: "/images/portfolio.png",
   //       position: 1,
   //     },
   //   ],
@@ -121,77 +133,46 @@ async function main() {
   // await prisma.projectFeature.createMany({
   //   data: [
   //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "🔐",
   //       message:
   //         "Authentication & Authorization (JWT, change password by email, Role-based: User / Admin)",
   //     },
   //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "👤",
-  //       message: "User Profile Management (Update info, shipping addresses)",
+  //       message: "User Profile Management (Update info)",
   //     },
   //     {
-  //       projectId: 4,
-  //       emoji: "🛒",
-  //       message: "Shopping Cart (Add, remove, update quantity)",
-  //     },
-  //     {
-  //       projectId: 4,
-  //       emoji: "🧾",
-  //       message: "Checkout Flow (Order creation, payment, shipping)",
-  //     },
-  //     {
-  //       projectId: 4,
-  //       emoji: "💳",
-  //       message: "Payment Integration (Stripe)",
-  //     },
-  //     {
-  //       projectId: 4,
-  //       emoji: "📦",
-  //       message: "Order Management (CRUD, status updates)",
-  //     },
-  //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "🏷️",
-  //       message: "Product Management (CRUD, categories, tags, filters)",
+  //       message: "Product Management (CRUD, projects, tags, filters)",
   //     },
   //     {
-  //       projectId: 4,
-  //       emoji: "🖼️",
-  //       message:
-  //         "Product Image Gallery (Multiple images, Cloudinary/local uploads",
-  //     },
-  //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "🔍",
   //       message:
-  //         "Advanced Search & Filters (Keyword, category, price range, AI assistant",
+  //         "Advanced Search & Filters (Keyword, category, AI assistant",
   //     },
   //     {
-  //       projectId: 4,
-  //       emoji: "⭐",
-  //       message: "Product Reviews & Ratings",
-  //     },
-  //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "📊",
   //       message: "Admin Dashboard",
   //     },
   //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "📈",
   //       message: "Analytics (Revenue, top products, sales trends)",
   //     },
   //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "📅",
   //       message: "Pagination & Sorting",
   //     },
   //     {
-  //       projectId: 4,
+  //       projectId: 5,
   //       emoji: "🌐",
-  //       message: "Built with MERN Stack (Node.js, MongoDB, React, TypeScript)",
+  //       message: "Built with MERN Stack (Node.js, PostgresSQL, Next.js, TypeScript)",
   //     },
   //   ],
   // });

@@ -16,10 +16,49 @@ export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
 
   const formContactSchema = z.object({
-    fullName: z.string().min(3),
-    phone: z.string(),
-    email: z.string().min(3),
-    message: z.string().min(1),
+    fullName: z
+      .string()
+      .trim()
+      .min(3, {
+        message: "Full name must be at least 3 characters",
+      })
+      .max(50, {
+        message: "Full name must not exceed 50 characters",
+      })
+      .regex(/^[a-zA-ZÀ-ỹ\s]+$/, {
+        message: "Full name can only contain letters and spaces",
+      }),
+
+    phone: z
+      .string()
+      .trim()
+      .refine(
+        (value) =>
+          !value || /^(0|\+84)(\s|-)?([3|5|7|8|9])(\d{8})$/.test(value),
+        {
+          message: "Invalid phone number",
+        }
+      ),
+
+    email: z
+      .string()
+      .trim()
+      .email({
+        message: "Invalid email address",
+      })
+      .max(100, {
+        message: "Email must not exceed 100 characters",
+      }),
+
+    message: z
+      .string()
+      .trim()
+      .min(10, {
+        message: "Message must be at least 10 characters",
+      })
+      .max(500, {
+        message: "Message must not exceed 500 characters",
+      }),
   });
 
   const form = useForm<z.infer<typeof formContactSchema>>({
@@ -37,7 +76,7 @@ export default function ContactForm() {
   };
 
   return (
-    <Card className="max-w-2/3 px-4 glass rounded-xl shadow-2xl border border-white/20 text-white">
+    <Card className="w-full px-4 glass rounded-xl shadow-2xl border border-white/20 text-white">
       {/* Header */}
       <CardHeader className="text-center">
         <CardTitle className="text-3xl font-semibold tracking-wider text-white">
