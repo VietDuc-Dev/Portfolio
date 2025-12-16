@@ -2,6 +2,7 @@
 
 import TypingText from "@/components/common/TypingText";
 import { Button } from "@/components/ui/button";
+import { resume } from "@/constants/resume";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,7 +61,7 @@ export default function HomePage() {
           <div className="w-60 h-60 rounded-full p-[3px] shadow-[0_0_25px_rgba(0,0,0,0.4)] flex justify-center items-center">
             <div className="relative w-58 h-58 rounded-full overflow-hidden">
               <Image
-                src="/Avatar.jpg"
+                src={resume.basics.image}
                 alt="Avatar"
                 fill
                 sizes="240px"

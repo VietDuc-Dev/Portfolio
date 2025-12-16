@@ -93,8 +93,8 @@ export const Heading: React.FC<HeadingProps> = ({ info }) => {
       </View>
       <View style={styles.imageContainer}>
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
-        {/* <Image style={styles.image} src={`${getBaseUrl()}/avatar.jpg`} /> */}
-        <Image style={styles.image} src={`/images/avatar.jpg`} />
+        <Image style={styles.image} src={`${getBaseUrl()}/images/avatar.jpg`} />
+        {/* <Image style={styles.image} src={`/images/avatar.jpg`} /> */}
       </View>
     </View>
   );

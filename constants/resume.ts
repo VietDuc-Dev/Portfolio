@@ -8,11 +8,11 @@ export const resume = {
   basics: {
     name: "Le Viet Duc",
     label: "Intern Frontend Developer (Reactjs/Nextjs)",
-    image: null,
+    image: "/images/Avatar.jpg",
     email: "levietduc.dev@gmail.com",
     phone: "0386 631 531",
     urlGithub: "https://github.com/VietDuc-Dev",
-    urlPortfolio: "https://github.com/VietDuc-Dev",
+    urlPortfolio: "https://portfolio-five-puce-64.vercel.app/",
     summary: `A ReactJS/NextJS programmer building optimized Frontend solutions for UX/performance. Experienced in implementing features and solving complex bugs based on Clean Code and SOLID principles. Possesses a high sense of responsibility and excellent teamwork ability.`,
     location: {
       address: null,

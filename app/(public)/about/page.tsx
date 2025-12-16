@@ -43,7 +43,7 @@ export default function AboutPage() {
                   className="w-60 h-60 rounded-full overflow-hidden shadow-md relative"
                 >
                   <Image
-                    src="/Avatar.jpg"
+                    src={resume.basics.image}
                     alt="Avatar"
                     fill
                     sizes="240px"

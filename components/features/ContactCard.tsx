@@ -16,6 +16,7 @@ import {
   TIKTOK_LINK,
   YOUTUBE_LINK,
 } from "@/constants/socialLinks";
+import { resume } from "@/constants/resume";
 
 export default function ContactCard() {
   return (
@@ -33,7 +34,7 @@ export default function ContactCard() {
               <div className="absolute inset-0 rounded-full blur-md group-hover:blur-lg transition-all duration-500"></div>
               <div className="w-30 h-30 object-cover rounded-full border-4 border-white/80 shadow-xl hover:scale-105 transform transition-all duration-400 relative z-10 overflow-hidden">
                 <Image
-                  src="/Avatar.jpg"
+                  src={resume.basics.image}
                   alt="Avatar"
                   fill
                   sizes="120px"
@@ -47,15 +48,17 @@ export default function ContactCard() {
         <div className="ml-5 text-primary">
           <div className="flex items-start gap-1">
             <Phone size={13} className="mt-1" />
-            <p className="text-sm">+84 386 631 531</p>
+            <p className="text-sm">{resume.basics.phone}</p>
           </div>
           <div className="flex items-start gap-1">
             <Mail size={13} className="mt-1" />
-            <p className="text-sm">levietduc.dev@gmail.com</p>
+            <p className="text-sm">{resume.basics.email}</p>
           </div>
           <div className="flex items-start gap-1">
             <MapPin size={13} className="mt-1" />
-            <p className="text-sm">Hiep Binh Chanh, Thu Duc</p>
+            <p className="text-sm">
+              {resume.basics.location.region}, {resume.basics.location.city}
+            </p>
           </div>
         </div>
       </div>
