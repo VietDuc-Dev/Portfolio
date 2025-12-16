@@ -8,15 +8,32 @@ import { DropdownMenuCheckboxes } from "@/components/features/FilterProject";
 import { MotionCard } from "@/components/common/MotionCard";
 import { Project } from "@/types/project";
 import ProjectAPI from "@/lib/server/ProjectAPI";
+import SkeletonCard from "@/components/common/SkeletonCard";
 
 export default function ProjectPage() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    ProjectAPI.getAllProjects().then(setProjects);
+    const fetchProjects = async () => {
+      try {
+        const data = await ProjectAPI.getAllProjects();
+        setProjects(data ?? []);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
   }, []);
 
-  if (!projects) return null;
+  if (!loading && projects.length === 0) {
+    return (
+      <p className="text-muted-foreground text-center mt-12">
+        No projects found.
+      </p>
+    );
+  }
 
   return (
     <motion.div
@@ -49,13 +66,21 @@ export default function ProjectPage() {
       </div>
 
       {/* Grid (loading vs real data) */}
-      <div className="grid grid-cols-3 gap-4">
-        {projects.map((project) => (
-          <MotionCard key={project.slug}>
-            <CardProject project={project} />
-          </MotionCard>
-        ))}
-      </div>
+      {loading ? (
+        <div className="grid grid-cols-3 gap-4">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-3 gap-4">
+          {projects.map((project) => (
+            <MotionCard key={project.slug}>
+              <CardProject project={project} />
+            </MotionCard>
+          ))}
+        </div>
+      )}
     </motion.div>
   );
 }

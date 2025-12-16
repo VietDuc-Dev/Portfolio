@@ -8,16 +8,37 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaGithub, FaYoutube, FaGlobe } from "react-icons/fa";
+import LoadingProject from "../loading";
 
 export default function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const [project, setProject] = useState<Project>();
+  const [project, setProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    ProjectAPI.getProjectDetail(slug).then(setProject);
+    if (!slug) return;
+
+    const fetchProject = async () => {
+      try {
+        const data = await ProjectAPI.getProjectDetail(slug);
+        setProject(data);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProject();
   }, [slug]);
 
-  if (!project) return null;
+  if (loading) return <LoadingProject />;
+
+  if (!project) {
+    return (
+      <p className="text-center mt-12 text-muted-foreground">
+        Project not found.
+      </p>
+    );
+  }
 
   return (
     <section className="max-w-6xl mx-auto px-6 py-4">
