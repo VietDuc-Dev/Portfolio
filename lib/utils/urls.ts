@@ -1,3 +1,5 @@
+import { APP_CONFIG } from "@/config";
+
 /**
  * https://www.youtube.com/test             -> true
  * http://localhost:5173/page               -> false
@@ -18,6 +20,6 @@ export function isExternalLink(url: string, domain: string): boolean {
 
 export const getBaseUrl = () => {
   if (typeof window !== "undefined") return ""; // browser should use relative url
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`; // SSR should use vercel url
+  if (APP_CONFIG.VERCEL_URL) return `https://${APP_CONFIG.VERCEL_URL}`; // SSR should use vercel url
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };

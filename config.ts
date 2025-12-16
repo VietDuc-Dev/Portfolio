@@ -5,4 +5,5 @@ export const APP_CONFIG = {
 
   DATABASE_URL: process.env.DATABASE_URL,
   WEBHOOK_SECRET: process.env.WEBHOOK_SECRET,
+  VERCEL_URL: process.env.VERCEL_URL,
 };
